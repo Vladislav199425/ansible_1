@@ -1,4 +1,78 @@
+
+
 Информация по list and dict 
 https://www-redhat-com.translate.goog/en/blog/ansible-lists-dictionaries-yaml?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=wapp
+
+разница между list and dict 
+  - name: T06 - Difference between bands2 and bands
+      ansible.builtin.debug:
+        msg: "{{ bands2 | difference(bands) }}" 
+
+Отсортировать по элементу 
+- name: T02 - Select element based on band name
+      ansible.builtin.debug:
+        msg: "{{ bands | selectattr('name','equalto','The Beatles') }}"
+
 Информация по filter 
 https://habr.com/ru/articles/778206/
+
+////////////////////
+Оф документация по jinja2
+https://jinja.palletsprojects.com/en/stable/templates/#map
+//////////////////
+
+1. Поиск по атрибутам 
+selectattr()
+Источник: https://oznetnerd.com/2017/04/18/jinja2-selectattr-filter/
+selectattr() фильтрует последовательность объектов, применяя тест к указанному атрибуту каждого объекта и выбирая только те объекты, для которых тест пройден. Если тест не указан, значение атрибута будет оцениваться как логическое.
+---
+users:
+  - name: john
+    email: john@example.com
+  - name: jane
+    email: jane@example.com
+  - name: fred
+    email: fred@example.com
+    password: 123!abc
+- set_fact:
+    emails: "{{ users | selectattr('password', 'undefined') | map(attribute='email') | list }}"
+как понимать 
+emails: "{{ dict | selectattr('ключ ', 'значнеие ') | map(attribute='выборка по условию ') | list }}"
+
+1. словарь «users» передается в фильтр selectattr( ).
+2. Фильтр selectattr() перебирает все словари (также известные как объекты) внутри «пользователей», определяя, в каких из них есть и нет «пароля» , указанного атрибута.
+3. Поскольку в качестве параметра был передан «undefined» тест, будут записаны только объекты, у которых не определен атрибут «пароль».
+4. Затем используется фильтр map( ) для возврата атрибута «email» всех объектов, которые были записаны на предыдущем шаге.
+
+Еще возможности для фильтрации 
+ selectattr( ) можно использовать с тестами Jinja (
+equalto( ) = равно   и 
+Ansible (match( ) = соответствует ли строка регулярному выражению с самого начала  и search( ) = посик  ).
+Источник: https://oznetnerd.com/2017/04/18/jinja2-selectattr-filter/
+Пример 
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    network:
+      addresses:
+        private_ext:
+          - type: fixed
+            addr: 172.16.2.100
+        private_man:
+          - type: fixed
+            addr: 172.16.1.100
+          - type: floating
+            addr: 10.90.80.10
+- debug: msg={{ network.addresses.private_man | selectattr("type", "equalto", "floating") | map(attribute='addr') | list }}
+- debug: msg={{ network.addresses.private_man | selectattr("type", "match", "^floating$ - регулярное выражение") | map(attribute='addr') | list }}
+- debug: msg={{ network.addresses.private_man | selectattr("type", "search", "^floating$ - регулярное выражение") | map(attribute='addr') | list }}
+
+
+Фильтр Jinja2 map() - филитр к словарям 
+Источник: https://oznetnerd.com/2017/04/18/jinja2-map-filter/
+
+Объясненеие по Jinja2 с примерами 
+https://github.com/OzNetNerd/Ansible-Playbooks/blob/master/Jinja/default/show_tidy.yml
+то означает, что если clean_out не определён, он будет определён как пустой список в соответствии с [] в фильтре:
+clean_out: "{{ clean_out|default([]) + [item.response] }}" — однако, если clean_out определён, Jinja сохранит его исходное значение.
