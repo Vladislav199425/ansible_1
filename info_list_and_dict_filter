@@ -94,3 +94,14 @@ Users on this page: {{ titles|map('lower')|join(', ') }}
 https://github.com/OzNetNerd/Ansible-Playbooks/blob/master/Jinja/default/show_tidy.yml
 то означает, что если clean_out не определён, он будет определён как пустой список в соответствии с [] в фильтре:
 clean_out: "{{ clean_out|default([]) + [item.response] }}" — однако, если clean_out определён, Jinja сохранит его исходное значение.
+
+
+--- Поиск выраженя из  stdout 
+when: branches.stdout | search('badfeature')
+Пример:
+- name: delete branch bad
+  command: git branch -D badfeature
+  args:
+    chdir: /srv/app
+  when: branches.stdout | search('badfeature')
+
