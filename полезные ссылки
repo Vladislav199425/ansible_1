@@ -1,0 +1,104 @@
+Ansible
+!!!!
+книга
+http://onreader.mdl.ru/MasteringAnsible2nd/content/Ch03.html
+!!!!
+
+основы ansible
+Основы Ansible, без которых ваши плейбуки — комок слипшихся макарон
+https://habr.com/ru/articles/508762/
+Основы Ansible, без которых ваши плейбуки — комок слипшихся макарон, часть 2
+https://habr.com/ru/articles/509938/
+Основы Ansible, без которых ваши плейбуки — комок слипшихся макарон, часть 3
+https://habr.com/ru/articles/512036/
+
+Учимся использовать разные типы переменных в Ansible
+https://habr.com/ru/companies/slurm/articles/755266/
+Расширяем возможности Ansible: шаблоны
+https://habr.com/ru/companies/otus/articles/719276/
+How to work with lists and dictionaries in Ansible
+https://www.redhat.com/en/blog/ansible-lists-dictionaries-yaml
+Ansible это вам не bash. Сергей Печенко
+https://habr.com/ru/articles/494738/
+Фильтры Ansible: превращаем сложное в простое
+https://habr.com/ru/articles/778206/
+Template Designer Documentation
+https://jinja.palletsprojects.com/en/stable/templates/#list-of-builtin-filters
+Распутывая Ansible Loops
+https://habr.com/ru/articles/526526/
+Отладка плэйбуков ansible
+https://habr.com/ru/articles/745328/
+
+Переменные
+ansible.builtin.type_debug filter – show input data type
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/type_debug_filter.html
+Как управлять многоступенчатым окружением с помощью Ansible
+https://habr.com/ru/articles/537126/
+
+jinja2
+Ansible. Шаблоны Jinja2
+https://andreyex.ru/linux/ansible-shablony-jinja2/
+Глава 3. Высвобождение всей мощи шаблонов Jinja2
+http://onreader.mdl.ru/MasteringAnsible2nd/content/Ch03.html
+Фильтры в Jinja
+https://help.carrotquest.io/article/20918
+Jan-Piet Mens
+Ansible: variables, variables, and more variables
+
+Циклы
+Ansible. Циклы
+https://andreyex.ru/linux/ansible-tsikly/
+
+Все об ansible
+Примеры работы с Ansible
+https://www.dmosk.ru/miniinstruktions.php?mini=ansible-examples
+Ansible: 30 самых важных модулей для DevOps-профессионалов (часть 1)
+https://habr.com/ru/companies/slurm/articles/707130/
+Ansible: 30 самых важных модулей для DevOps-профессионалов (часть 2)
+https://habr.com/ru/companies/slurm/articles/707986/
+Пособие по Ansible
+https://habr.com/ru/articles/305400/
+
+Условия
+Ansible. Принятие решений в Ansible
+https://andreyex.ru/linux/ansible-prinyatie-reshenij-v-ansible/
+until
+Плейбуки Ansible — советы и примеры
+https://habr.com/ru/companies/slurm/articles/690614/
+паралельная работа, lookup
+Стратегии плейбуков и lookups в Ansible
+https://habr.com/ru/companies/otus/articles/754782/
+
+Манипулирование данными
+Using filters to manipulate data
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_filters.html
+
+Методы списков
+https://www.packetswitch.co.uk/ansible-lists-examples/
+№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№№
+High Availability PostgreSQL
+Организуем High Availability PostgreSQL
+https://habr.com/ru/companies/avito/articles/775922/
+
+Настройка СУБД под 1С и OLTP
+№№№№№№№№№№№№№№№№№№№№№№№№№№№№3
+postgres.блокировки
+https://wiki.postgresql.org/wiki/Lock_Monitoring
+Руководство по решению аварийных ситуаций
+https://wiki.orionsoft.ru/proximadb/latest/emergency-manual/
+
+Настройка СУБД под 1С и OLTP
+https://habr.com/ru/articles/776536/
+
+scram-256
+https://www.cybertec-postgresql.com/en/
+
+Компрессия WAL в PostgreSQL: что нового в 15-й версии?
+https://habr.com/ru/companies/otus/articles/731710/
+
+
+
+№№№№№№№№№№№№№№№№№№№№№№№№
+linux 
+htop и многое другое на пальцах
+https://habr.com/ru/articles/316806/
